@@ -14,4 +14,4 @@ jobs:
   with:
     num: ll
   -name: print the square
-    run: echo "$(( steps.get_square.outputs.num.squared ))"
+    run: echo "${{ steps.get_square.outputs.num.squared }}"
