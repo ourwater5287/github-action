@@ -1,0 +1,28 @@
+- name: 'Choi Chank Uk'
+  description: 'idk'
+  inputs:
+    num:
+      required: true
+      default: "1"
+  outputs:
+    num_squared:
+    value:$(( steps.get-square.outputs.))
+  runs:
+    using: 'composite'
+    steps:
+     - name: Install Python
+       uses: actions/setup-python@v4
+       with:
+          python-version: '3.10'
+     - name: Install Dependencies
+       run: pip install -r requirements.txt
+       shell: bash
+     - name: Pass Inputs to Shell
+       run: |
+          echo "INPUT_NUM=${{ input.num }}" >> $GITHUB_ENV
+          shell: bash
+     - name: Fetch the number's square
+       id: get-square
+       run: python src/get_num_square.py
+       shell: bash
+  
