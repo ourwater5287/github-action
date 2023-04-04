@@ -6,11 +6,11 @@ jobs:
   runs-on: ubuntu-lastest
   name: return the number square
   step:
-  -name: Checkout
+  - name: Checkout
   uses: action/checkout@v2
-  -name: fetch um squared
+  - name: fetch um squared
   id: get_square
-  uses: ./
+  uses: ./ # Uses an action in the root directrory
   with:
     num: ll
   -name: print the square
