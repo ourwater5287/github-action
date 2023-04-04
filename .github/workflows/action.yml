@@ -6,7 +6,8 @@
       default: "1"
   outputs:
     num_squared:
-      value:${{ steps.get-square.outputs.num_squared }}
+      description: 'Squrae'
+      value: ${{ steps.get-square.outputs.num_squared }}
   runs:
     using: 'composite'
     steps:
