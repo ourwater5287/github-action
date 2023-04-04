@@ -1,0 +1,17 @@
+name: Test
+on: [push]
+
+jobs:
+  get-num-square:
+  runs-on: ubuntu-lastest
+  name: return the number square
+  step:
+  -name: Checkout
+  uses: action/checkout@v2
+  -name: fetch um squared
+  id: get_square
+  uses: ./
+  with:
+    num: ll
+  -name: print the square
+    run: echo "$(( steps.get_square.outputs.num.squared ))"
