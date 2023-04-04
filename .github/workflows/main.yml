@@ -5,7 +5,7 @@ jobs:
   get-num-square:
     runs-on: ubuntu-lastest
     name: return the number square
-    step:
+    steps:
      - name: Checkout
        uses: action/checkout@v2
      - name: fetch num squared
