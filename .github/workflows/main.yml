@@ -3,15 +3,15 @@ on: [push]
 
 jobs:
   get-num-square:
-  runs-on: ubuntu-lastest
-  name: return the number square
-  step:
-  - name: Checkout
-  uses: action/checkout@v2
-  - name: fetch um squared
-  id: get_square
-  uses: ./ # Uses an action in the root directrory
-  with:
-    num: ll
-  -name: print the square
-    run: echo "${{ steps.get_square.outputs.num_squared }}"
+    runs-on: ubuntu-lastest
+    name: return the number square
+    step:
+     - name: Checkout
+       uses: action/checkout@v2
+     - name: fetch num squared
+       id: get_square
+       uses: ./ # Uses an action in the root directrory
+       with:
+        num: ll
+     - name: print the square
+       run: echo "${{ steps.get_square.outputs.num_squared }}"
